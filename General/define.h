@@ -58,3 +58,22 @@ const ll maxVal64 = (1ll << 62); // long long max val
 const int dx[4] = {0,0,1,-1}, dy[4] = {1,-1,0,0}; // For *every* grid problem
 const ll INF = 1e18; // Large enough to pass as infinity
 const int MOD = 1e9+7; // Some CP problems use this
+
+// Templates
+template <typename type>
+void printData(type arr){
+	for (int i : arr){
+		cout << i << ' ';
+	}
+	cout << '\n';
+}
+
+template <typename type>
+void printMatrix(type matrix){ // Prints a 2d array / vector
+	for (int i = 0; i < matrix.size(); i++){
+		for (int d = 0; d < matrix[i].size(); d++){
+			cout << matrix[i][d] << ' ';
+		}
+		cout << '\n';
+	}
+}

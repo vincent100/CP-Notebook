@@ -16,23 +16,6 @@ void fastIO(){
 }
 
 // Templates
-template <typename type>
-void printData(type arr){
-	for (int i : arr){
-		cout << i << ' ';
-	}
-	cout << '\n';
-}
-
-template <typename type>
-void printMatrix(type matrix){ // Prints a 2d array / vector
-	for (int i = 0; i < matrix.size(); i++){
-		for (int d = 0; d < matrix[i].size(); d++){
-			cout << matrix[i][d] << ' ';
-		}
-		cout << '\n';
-	}
-}
 
 // Structs (examples below)
 struct DSU{ // aka Union Find
