@@ -1,9 +1,5 @@
 // Includes (only use <bits/stdc++.h> for Competitive Programming)
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <algorithm>
-#include <stack>
+#include <bits/stdc++.h>
 
 // Namespace and typedefs (these are my preferences)
 using namespace std;
@@ -69,20 +65,54 @@ const ll INF = 1e18; // Large enough to pass as infinity
 const int MOD = 1e9+7; // Some CP problems use this
 
 // Templates
-template <typename type>
-void printData(type arr){
-	for (int i : arr){
+template <typename type> // Unnecessary after C++ 23 :)
+void printData(vector<type> arr){
+	for (auto i : arr){
 		cout << i << ' ';
 	}
 	cout << '\n';
 }
 
-template <typename type>
-void printMatrix(type matrix){ // Prints a 2d array / vector
-	for (int i = 0; i < matrix.size(); i++){
-		for (int d = 0; d < matrix[i].size(); d++){
-			cout << matrix[i][d] << ' ';
+template <typename type> // Unnecessary after C++ 23 :)
+void printMatrix(vector<vector<type>> matrix){
+	for (auto i : matrix){
+		for (auto d : i){
+			cout << d << ' ';
 		}
 		cout << '\n';
 	}
+}
+
+template<typename type>
+vector<type> getData(int len){
+	vector<type> data;
+	type on;
+	for (int i = 0; i < len; i++){
+		cin >> on;
+		data.push_back(on);
+	}
+	return data;
+}
+
+template<typename type>
+vector<vector<type>> getMatrix(int height, int len){
+	vector<vector<type>> matrix;
+	type on;
+	for (int i = 0; i < height; i++){
+		matrix.push_back({});
+		for (int d = 0; d < len; d++){
+			cin >> on;
+			matrix[i].push_back(on);
+		}
+	}
+	return matrix;
+}
+
+// General functions
+void fastIO(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+}
+
+signed main(){
 }
