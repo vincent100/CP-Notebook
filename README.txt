@@ -3,8 +3,17 @@ DESCRIPTION:
 
 
 ADD:
-   0/1 BFS
-   Sparse / Dense Dikstras
-   Bellman Ford
-   Sparse Table
-   Lowest Common Ancestor
+   GRAPHS:
+      0/1 BFS
+      Sparse / Dense Dikstras
+      Bellman Ford
+      Sparse Table
+      Lowest Common Ancestor
+   NUM THEORY:
+      Factorization
+      GCM /LCM
+      Modular Exponentiation
+      Modular Inverse
+      Binomial Coefficients 
+      Derangements
+      
