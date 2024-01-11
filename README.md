@@ -3,7 +3,7 @@
 ## Description
 
 This is my personal Competitive Programming notebook. It contains implementations, tricks, tactics, and anything else I find useful.
-This is a work in progress, and I will regularly update it.
+It is a work in progress, and I will regularly update it.
 
 ## Add
 
