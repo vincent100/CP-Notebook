@@ -85,8 +85,14 @@ const int MOD = 1e9+7; // Some CP problems use this
 
 // Templates (not dependent on using namespace std)
 
+// Print pair (with cout)
+std::ostream& operator << (std::ostream& out, std::pair<auto, auto>& p){
+    out << "{ " << p.first << ", " << p.second << " }";
+    return out;
+}
+
 // Print data (with cout)
-std::ostream& operator << (std::ostream& out, std::vector<auto> data){
+std::ostream& operator << (std::ostream& out, std::vector<auto>& data){
     for (auto i : data){
         out << i << ' ';
     }
@@ -103,6 +109,12 @@ std::ostream& operator << (std::ostream& out, std::vector<std::vector<auto>>& ma
         out << '\n';
     }
     return out;
+}
+
+// Get pair (with cin)
+std::istream& operator >> (std::istream& in, std::pair<auto, auto>& p){
+    in >> p.first >> p.second;
+    return in;
 }
 
 // Get data (with cin) (already sized to fit)

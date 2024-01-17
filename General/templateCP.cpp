@@ -4,50 +4,50 @@
 // Namespace and typedefs (these are my preferences)
 using namespace std;
 
-// types
+// Types
 typedef long long ll;
 typedef long double ld;
-typedef string str;
+typedef std::string str;
 
 // 1d vectors
-typedef vector<int> idata;
-typedef vector<ll> lldata;
-typedef vector<char> cdata;
-typedef vector<bool> bdata;
-typedef vector<str> sdata;
-typedef vector<double> ddata;
+typedef std::vector<int> idata;
+typedef std::vector<ll> lldata;
+typedef std::vector<char> cdata;
+typedef std::vector<bool> bdata;
+typedef std::vector<str> sdata;
+typedef std::vector<double> ddata;
 
 // 2d vectors
-typedef vector<idata> imatrix;
-typedef vector<lldata> llmatrix;
-typedef vector<cdata> cmatrix;
-typedef vector<bdata> bmatrix;
-typedef vector<sdata> smatrix;
-typedef vector<ddata> dmatrix;
+typedef std::vector<idata> imatrix;
+typedef std::vector<lldata> llmatrix;
+typedef std::vector<cdata> cmatrix;
+typedef std::vector<bdata> bmatrix;
+typedef std::vector<sdata> smatrix;
+typedef std::vector<ddata> dmatrix;
 
 // Pairs
-typedef pair<int, int> ipair;
-typedef pair<ll, ll> llpair;
-typedef pair<char, char> cpair;
-typedef pair<bool, bool> bpair;
-typedef pair<str, str> spair;
-typedef pair<double, double> dpair;
+typedef std::pair<int, int> ipair;
+typedef std::pair<ll, ll> llpair;
+typedef std::pair<char, char> cpair;
+typedef std::pair<bool, bool> bpair;
+typedef std::pair<str, str> spair;
+typedef std::pair<double, double> dpair;
 
 // Queues
-typedef queue<int> iqueue;
-typedef queue<ll> llqueue;
-typedef queue<char> cqueue;
-typedef queue<bool> bqueue;
-typedef queue<str> squeue;
-typedef queue<double> dqueue;
+typedef std::queue<int> iqueue;
+typedef std::queue<ll> llqueue;
+typedef std::queue<char> cqueue;
+typedef std::queue<bool> bqueue;
+typedef std::queue<str> squeue;
+typedef std::queue<double> dqueue;
 
 // Stacks
-typedef stack<int> istack;
-typedef stack<ll> llstack;
-typedef stack<char> cstack;
-typedef stack<bool> bstack;
-typedef stack<str> sstack;
-typedef stack<double> dstack;
+typedef std::stack<int> istack;
+typedef std::stack<ll> llstack;
+typedef std::stack<char> cstack;
+typedef std::stack<bool> bstack;
+typedef std::stack<str> sstack;
+typedef std::stack<double> dstack;
 
 // (Competitive Programming)
 #define pb push_back
@@ -64,48 +64,56 @@ const int dx[4] = {0,0,1,-1}, dy[4] = {1,-1,0,0}; // For *every* grid problem
 const ll INF = 1e18; // Large enough to pass as infinity
 const int MOD = 1e9+7; // Some CP problems use this
 
-// Templates
-template <typename type> // Unnecessary after C++ 23 :)
-void printData(vector<type> arr){
-	for (auto i : arr){
-		cout << i << ' ';
-	}
-	cout << '\n';
+// Templates (not dependent on using namespace std)
+
+// Print pair (with cout)
+std::ostream& operator << (std::ostream& out, std::pair<auto, auto>& p){
+    out << "{ " << p.first << ", " << p.second << " }";
+    return out;
 }
 
-template <typename type> // Unnecessary after C++ 23 :)
-void printMatrix(vector<vector<type>> matrix){
-	for (auto i : matrix){
-		for (auto d : i){
-			cout << d << ' ';
-		}
-		cout << '\n';
-	}
+// Print data (with cout)
+std::ostream& operator << (std::ostream& out, std::vector<auto>& data){
+    for (auto i : data){
+        out << i << ' ';
+    }
+    out << '\n';
+    return out;
 }
 
-template<typename type>
-vector<type> getData(int len){
-	vector<type> data;
-	type on;
-	for (int i = 0; i < len; i++){
-		cin >> on;
-		data.push_back(on);
-	}
-	return data;
+// Print matrix (with cout)
+std::ostream& operator << (std::ostream& out, std::vector<std::vector<auto>>& matrix){
+    for (auto i : matrix){
+        for (auto d : i){
+            out << d << ' ';
+        }
+        out << '\n';
+    }
+    return out;
 }
 
-template<typename type>
-vector<vector<type>> getMatrix(int height, int len){
-	vector<vector<type>> matrix;
-	type on;
-	for (int i = 0; i < height; i++){
-		matrix.push_back({});
-		for (int d = 0; d < len; d++){
-			cin >> on;
-			matrix[i].push_back(on);
-		}
-	}
-	return matrix;
+// Get pair (with cin)
+std::istream& operator >> (std::istream& in, std::pair<auto, auto>& p){
+    in >> p.first >> p.second;
+    return in;
+}
+
+// Get data (with cin) (already sized to fit)
+std::istream& operator >> (std::istream& in, std::vector<auto>& data){
+    for (auto& i : data){
+        in >> i;
+    }
+    return in;
+}
+
+// Get matrix (with cin) (already sized to fit)
+std::istream& operator >> (std::istream& in, std::vector<std::vector<auto>>& matrix){
+    for (auto& i : matrix){
+        for (auto& d : i){
+            in >> d;
+        }
+    }
+    return in;
 }
 
 // General functions
@@ -115,4 +123,7 @@ void fastIO(){
 }
 
 signed main(){
+	imatrix on (3, idata (2));
+	cin >> on;
+	cout << on;
 }
