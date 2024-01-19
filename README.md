@@ -14,7 +14,6 @@ On my to do list to add
       - 0/1 BFS
       - Sparse / Dense Dikstras
       - Bellman Ford
-      - Sparse Table
       - Lowest Common Ancestor
    - NUM THEORY:
       - Factorization
