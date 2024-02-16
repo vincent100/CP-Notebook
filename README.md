@@ -10,7 +10,6 @@ It is a work in progress, and I will regularly update it.
 On my to do list to add
 
    - GRAPHS:
-      - BIT (Fenwick tree)
       - 0/1 BFS
       - Sparse / Dense Dikstras
       - Bellman Ford
